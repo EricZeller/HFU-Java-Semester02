@@ -11,19 +11,17 @@ public class Aufgabe1 {
         System.out.println(Calculator.minus(2, 2));
         System.out.println(Calculator.times(2, 2));
         System.out.println(Calculator.divide(2, 2));
-
     }
-
 }
 
 class Primes {
-    int currentPrime;
+    private int currentPrime;
 
     Primes() {
         currentPrime = 1;
     }
 
-    int nextPrime() {
+    public int nextPrime() {
         this.currentPrime++;
         for (int i = 2; i < currentPrime; i++) {
             if (currentPrime % i == 0) {

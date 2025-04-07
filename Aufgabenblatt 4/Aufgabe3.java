@@ -20,25 +20,36 @@ class CharacterSet {
         System.out.println(characters);
     }
 
-    boolean add (char newChar){
+    public boolean add (char newChar){
         if (newChar != Character.toUpperCase(newChar)) return false;
         
         for (int i = 0; i < size; i++) {
             if (this.characters[i] == newChar) return false;
         }
         characters[size] = newChar;
+        for(int i=size; i>=1; i--) {
+            if(Character.compare(characters[i-1], characters[i])>0){
+                swap(i, i-1);
+            }
+        }
         size++;
         return true;
     }
 
-    boolean contains (char toProve) {
+    public boolean contains (char toProve) {
         for(int i=0; i<size; i++){
             if (toProve==characters[i]) return true;
         }
         return false;
     }
 
-    int size (){
+    public int size (){
         return this.size;
+    }
+
+    private void swap(int i, int j) {
+        char oldChar = characters[i];
+        characters[i] = characters[j];
+        characters[j] = oldChar;
     }
 }
