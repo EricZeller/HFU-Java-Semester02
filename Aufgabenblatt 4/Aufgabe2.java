@@ -10,7 +10,7 @@ public class Aufgabe2 {
     //gibt die Wurzel zurück, falls diese ganzzahlig ist. Sonst -1
 
     public static void main(String[] args) {
-        System.out.println(f(25));
+        System.out.println(f(Integer.parseInt(System.console().readLine("Zu wurzel ziehende Zahl eingeben: "))));
     }
 }
 

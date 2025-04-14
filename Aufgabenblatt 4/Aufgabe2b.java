@@ -1,13 +1,13 @@
 public class Aufgabe2b {
     public static int fBinary(int number) {
         if (number < 0)
-            return -1; 
+            return -1;
 
         int left = 1, right = number;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            long square = (long) mid * mid; 
+            long square = (long) mid * mid;
 
             if (square == number) {
                 return mid;
@@ -20,11 +20,11 @@ public class Aufgabe2b {
         return -1;
     }
 
-    
     // gibt die Wurzel zurück, falls diese ganzzahlig ist. Sonst -1
 
     public static void main(String[] args) {
-        System.out.println(fBinary(Integer.parseInt(System.console().readLine("Bitte Zahl eingeben von der die Wurzel gezogen werden soll: "))));
+        System.out.println(fBinary(Integer.parseInt(
+            System.console().readLine("Bitte Zahl eingeben von der die Wurzel gezogen werden soll: "))));
     }
 }
 
