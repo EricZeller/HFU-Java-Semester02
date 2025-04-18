@@ -2,7 +2,7 @@ public class Aufgabe1 {
     public static void main(String[] args) {
 
         Primes primes = new Primes();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 60; i++) {
             int prime = primes.nextPrime();
             System.out.println(prime);
         }
@@ -23,7 +23,7 @@ class Primes {
 
     public int nextPrime() {
         this.currentPrime++;
-        for (int i = 2; i < currentPrime; i++) {
+        for (int i = 2; i < this.currentPrime ; i++) {
             if (currentPrime % i == 0) {
                 this.currentPrime++;
             }
@@ -33,19 +33,19 @@ class Primes {
 }
 
 class Calculator {
-    static float plus(float x, float y) {
+    public static float plus(float x, float y) {
         return x + y;
     }
 
-    static float minus(float x, float y) {
+    public static float minus(float x, float y) {
         return x - y;
     }
 
-    static float times(float x, float y) {
+    public static float times(float x, float y) {
         return x * y;
     }
 
-    static float divide(float x, float y) {
+    public static float divide(float x, float y) {
         return x / y;
     }
 }
