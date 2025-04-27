@@ -29,19 +29,19 @@ class Aufgabe2a {
 }
 
 class Calculator {
-    float plus(float x, float y) {
+    public float plus(float x, float y) {
         return x + y;
     }
 
-    float minus(float x, float y) {
+    public float minus(float x, float y) {
         return x - y;
     }
 
-    float times(float x, float y) {
+    public float times(float x, float y) {
         return x * y;
     }
 
-    float divide(float x, float y) {
+    public float divide(float x, float y) {
         return x / y;
     }
 }

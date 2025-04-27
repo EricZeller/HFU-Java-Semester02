@@ -2,7 +2,7 @@ public class Aufgabe1 {
     public static void main(String[] args) {
 
         Primes primes = new Primes();
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 20; i++) {
             int prime = primes.nextPrime();
             System.out.println(prime);
         }
@@ -15,7 +15,7 @@ public class Aufgabe1 {
 }
 
 class Primes {
-    private int currentPrime;
+    private int currentPrime; // nun Sichtbarkeit auf private gestellt
 
     Primes() {
         currentPrime = 1;
@@ -26,6 +26,7 @@ class Primes {
         for (int i = 2; i < this.currentPrime ; i++) {
             if (currentPrime % i == 0) {
                 this.currentPrime++;
+                i=2; // i wurde nicht zurückgesetzt, sondern wurde weiter verwendet -> hier lag der Fehler, 27 und 35 werden nun nicht mehr ausgegeben
             }
         }
         return this.currentPrime;

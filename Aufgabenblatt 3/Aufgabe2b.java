@@ -39,19 +39,19 @@ class Aufgabe2b {
 }
 
 class Calculator {
-    static float plus(float x, float y) {
+    public float plus(float x, float y) {
         return x + y;
     }
 
-    static float minus(float x, float y) {
+    public float minus(float x, float y) {
         return x - y;
     }
 
-    static float times(float x, float y) {
+    public float times(float x, float y) {
         return x * y;
     }
 
-    static float divide(float x, float y) {
+    public float divide(float x, float y) {
         return x / y;
     }
 }

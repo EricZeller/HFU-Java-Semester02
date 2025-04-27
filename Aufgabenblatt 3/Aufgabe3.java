@@ -12,16 +12,15 @@ public class Aufgabe3 {
 
 class Characters {
 
-    char[] characters;
-    int size = 0;
+    private char[] characters;
+    private int size = 0;
 
     Characters(int capacity) {
         characters = new char[capacity];
-        System.out.println(characters);
     }
 
-    boolean add (char newChar){
-        if (newChar != Character.toUpperCase(newChar)) {
+    public boolean add (char newChar){
+        if (newChar != Character.toUpperCase(newChar)) { // dadurch wird der Datentyp char beibehalten und es kann überprüft werden ob der Character ein Großbuchstabe ist. Sonst müsste es 2x zu einem String konvertiert werden
             return false;
         }
         characters[size] = newChar;
@@ -29,7 +28,7 @@ class Characters {
         return true;
     }
 
-    boolean contains (char toProve) {
+    public boolean contains (char toProve) {
         for(int i=0; i<size; i++){
             if (toProve==characters[i]) return true;
         }
