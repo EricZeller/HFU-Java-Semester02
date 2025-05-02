@@ -9,16 +9,16 @@ class Aufgabe2b {
         float result = 0;
         switch (operation) {
             case '+':
-                result = calculator.plus(left, right);
+                result = Calculator.plus(left, right);
                 break;
             case '-':
-                result = calculator.minus(left, right);
+                result = Calculator.minus(left, right);
                 break;
             case '*':
-                result = calculator.times(left, right);
+                result = Calculator.times(left, right);
                 break;
             case '/':
-                result = calculator.divide(left, right);
+                result = Calculator.divide(left, right);
                 break;
             default:
                 System.out.println("Invalid operation");
@@ -39,19 +39,19 @@ class Aufgabe2b {
 }
 
 class Calculator {
-    public float plus(float x, float y) {
+    public static float plus(float x, float y) {
         return x + y;
     }
 
-    public float minus(float x, float y) {
+    public static float minus(float x, float y) {
         return x - y;
     }
 
-    public float times(float x, float y) {
+    public static float times(float x, float y) {
         return x * y;
     }
 
-    public float divide(float x, float y) {
+    public static float divide(float x, float y) {
         return x / y;
     }
 }

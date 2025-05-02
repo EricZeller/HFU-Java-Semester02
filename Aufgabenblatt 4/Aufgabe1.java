@@ -18,9 +18,7 @@ class Fraction {
     private int numerator, denominator;
 
     public Fraction(int numerator, int denominator) {
-        int gcd = gcd(numerator, denominator);
-        this.numerator = numerator / gcd;
-        this.denominator = denominator / gcd;
+        setGeneral(numerator, denominator);
     }
 
     public int getNumerator() {
@@ -41,14 +39,16 @@ class Fraction {
     }
 
     public void setNumerator(int numerator) {
-        int gcd = gcd(numerator, this.denominator);
-        this.numerator = numerator / gcd;
-        this.denominator = this.denominator / gcd;
+        setGeneral(numerator, this.denominator);
     }
 
     public void setDenominator(int denominator) {
-        int gcd = gcd(this.numerator, denominator);
-        this.numerator = this.numerator / gcd;
+        setGeneral(this.numerator, denominator);
+    }
+
+    private void setGeneral(int numerator, int denominator) {
+        int gcd = gcd(numerator, denominator);
+        this.numerator = numerator / gcd;
         this.denominator = denominator / gcd;
     }
 

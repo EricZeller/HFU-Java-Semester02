@@ -17,15 +17,13 @@ class CharacterSet {
 
     CharacterSet(int capacity) {
         characters = new char[capacity];
-        System.out.println(characters);
     }
 
     public boolean add (char newChar){
         if (newChar != Character.toUpperCase(newChar)) return false;
         
-        for (int i = 0; i < size; i++) {
-            if (this.characters[i] == newChar) return false;
-        }
+        if (index(newChar)) return false;
+
         characters[size] = newChar;
         for(int i=size; i>=1; i--) {
             if(Character.compare(characters[i-1], characters[i])>0){
@@ -37,8 +35,13 @@ class CharacterSet {
     }
 
     public boolean contains (char toProve) {
+        if (index(toProve)) return true;
+        else return false;
+    }
+    
+    private boolean index(char character) {
         for(int i=0; i<size; i++){
-            if (toProve==characters[i]) return true;
+            if (character==characters[i]) return true;
         }
         return false;
     }
