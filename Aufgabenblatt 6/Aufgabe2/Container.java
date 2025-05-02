@@ -1,6 +1,8 @@
-public interface Container {
+package Aufgabe2;
+
+public interface Container<E> {
     int size();
-    boolean add(int number);
-    boolean remove(int number);
-    boolean contains(int number);
+    boolean add(E value);
+    boolean remove(E value);
+    boolean contains(E value);
 } 

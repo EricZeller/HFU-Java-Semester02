@@ -1,11 +1,13 @@
-public class LinkedList implements Container {
+package Aufgabe2;
+
+public class LinkedList<E> implements Container<E> {
     private class Node {
-        int number;
+        E value;
         Node next;
         Node before;
 
-        Node(int number) {
-            this.number = number;
+        Node(E value) {
+            this.value = value;
             this.next = head;
             if (head != null) {
                 head.before = this;
@@ -21,14 +23,14 @@ public class LinkedList implements Container {
         return size;
     }
 
-    public boolean add(int number) {
-        head = new Node(number);
+    public boolean add(E value) {
+        head = new Node(value);
         size = size + 1;
         return true;
     }
 
-    public boolean remove(int number) {
-        Node node = find(number);
+    public boolean remove(E value) {
+        Node node = find(value);
         if (node == null) {
             return false;
         }
@@ -44,13 +46,13 @@ public class LinkedList implements Container {
         return true;
     }
 
-    public boolean contains(int number) {
-        return (find(number) != null);
+    public boolean contains(E value) {
+        return (find(value) != null);
     }
 
-    private Node find(int number) {
+    private Node find(E value) {
         for (Node node = head; node != null; node = node.next) {
-            if (node.number == number)
+            if (node.value == value)
                 return node;
         }
         return null;
@@ -62,24 +64,24 @@ public class LinkedList implements Container {
         if (node == null)
             return;
         while (node.next != null) {
-            System.out.print(node.number + " ");
+            System.out.print(node.value + " ");
             node = node.next;
         }
-        System.out.print(node.number + " ");
+        System.out.print(node.value + " ");
         node = node.before;
         while (node != null) {
-            System.out.print(node.number + " ");
+            System.out.print(node.value + " ");
             node = node.before;
         }
     }
 
     // Aufgabe c
 
-    public boolean equals(LinkedList other) {
+    public boolean equals(LinkedList<E> other) {
         Node n1 = this.head;
         Node n2 = other.head;
         while (n1 != null && n2 != null) {
-            if (n1.number != n2.number)
+            if (n1.value != n2.value)
                 return false;
             n1 = n1.next;
             n2 = n2.next;

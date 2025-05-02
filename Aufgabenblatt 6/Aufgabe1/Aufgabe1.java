@@ -13,6 +13,6 @@ public class Aufgabe1 {
             w2--;
         }
         System.out.println(v == w);
-        System.out.println(v2); // bei 127
+        System.out.println(v2); // bei 127 / ab 128 wird nicht mehr gecached
     }
 }

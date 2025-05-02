@@ -1,7 +1,9 @@
+package Aufgabe2;
+
 public class Aufgabe2 {
     public static void main(String[] args) {
         // a
-        LinkedList listA = new LinkedList();
+        LinkedList<Integer> listA = new LinkedList<Integer>();
         System.out.println("Aufgabe 2a:");
         System.out.println(listA.add(4));
         System.out.println(listA.add(7));
@@ -20,7 +22,7 @@ public class Aufgabe2 {
 
 
         // b
-        LinkedList listB = new LinkedList();
+        LinkedList<Integer> listB = new LinkedList<Integer>();
         System.out.println("Aufgabe 2b:");
         System.out.println(listB.add(4));
         System.out.println(listB.add(7));
@@ -34,24 +36,39 @@ public class Aufgabe2 {
 
         // c
         System.out.println("Aufgabe 2c:");
-        LinkedList list = new LinkedList();
+        LinkedList<Integer> list = new LinkedList<Integer>();
         list.add(4);
         list.add(7);
         list.add(1);
         list.add(1);
         System.out.println(list.equals(list));
-        LinkedList other = new LinkedList();
+        LinkedList<Integer> other = new LinkedList<Integer>();
         other.add(4);
         other.add(7);
         other.add(1);
         other.add(2);
         System.out.println(list.equals(other));
         System.out.println(other.equals(list));
+
+        //Blatt 6 zum testen mit Strings:
+        LinkedList<String> listStringBlatt6 = new LinkedList<String>();
+        System.out.println("Aufgabenblatt 6 Aufgabe 2:");
+        System.out.println(listStringBlatt6.add("H"));
+        System.out.println(listStringBlatt6.add("F"));
+        System.out.println(listStringBlatt6.add("U"));
+        System.out.println(listStringBlatt6.add("U"));
+        System.out.println(listStringBlatt6.contains("H"));
+        System.out.println(listStringBlatt6.contains("X"));
+        System.out.println(listStringBlatt6.remove("H"));
+        System.out.println(listStringBlatt6.remove("F"));
+        System.out.println(listStringBlatt6.remove("U"));
+        System.out.println(listStringBlatt6.size());
+
     }
 
 }
 
-/* Gewünschte Ausgaben:
+/* Gewünschte Ausgaben: Immer noch gleich bei Blatt 6!
  * Aufgabe a:
  * true
  * true
