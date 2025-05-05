@@ -11,9 +11,6 @@ public class DynamicContainer implements Container {
     public int size() {
         return size;
     }
-    public int getArrayLength() { // zum überprüfen eingebaut
-        return this.numbers.length;
-    }
 
     public boolean add(int number) {
         ensureCapacity();
