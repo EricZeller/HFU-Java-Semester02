@@ -1,6 +1,6 @@
 //package Aufgabe1;
 
-public class Fraction {
+public class Fraction implements Comparable<Fraction> {
     private int numerator, denominator;
 
     public Fraction(int numerator, int denominator) {
@@ -43,7 +43,8 @@ public class Fraction {
         this.numerator = numerator / gcd;
         this.denominator = denominator / gcd;
     }
-    @Override //equals wird angepasst, wird nachher in find() aufgerufen von LinkedList
+
+    @Override // equals wird angepasst, wird nachher in find() aufgerufen von LinkedList
     public boolean equals(Object other) {
         if (this == other)
             return true;
@@ -59,6 +60,22 @@ public class Fraction {
 
     @Override
     public String toString() {
-        return numerator + "/" + denominator;
+        if (this.denominator == 1) {
+            return Integer.toString(this.numerator);
+        }
+        return this.numerator + "/" + this.denominator;
+    }
+
+    @Override
+    public int compareTo(Fraction other) {
+        if (this.equals(other)) {
+            return 0;
+        }
+
+        // Vergleich von Brüchen mit Kreuzmultiplikation
+        int thisNumerator = (int) this.numerator * other.denominator;
+        int otherNumerator = (int) other.numerator * this.denominator;
+
+        return Integer.compare(thisNumerator, otherNumerator);
     }
 }
