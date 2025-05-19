@@ -6,7 +6,6 @@ public class Aufgabe1 {
 
         Integer v2 = 1000_000;
         Integer w2 = 1000_000;
-        System.out.println(v2);
         System.out.println(v2 == w2);
         while (v2!=w2) {
             v2--;

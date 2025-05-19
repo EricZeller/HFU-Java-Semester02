@@ -1,4 +1,3 @@
-package Aufgabe3;
 
 public class USD extends Currency {
     @Override

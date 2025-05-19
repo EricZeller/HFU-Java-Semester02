@@ -1,4 +1,3 @@
-package Aufgabe2;
 
 public class LinkedList<E> implements Container<E> {
     private class Node {

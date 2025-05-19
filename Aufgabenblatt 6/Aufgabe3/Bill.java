@@ -1,4 +1,3 @@
-package Aufgabe3;
 
 public class Bill {
     private final double amount; 

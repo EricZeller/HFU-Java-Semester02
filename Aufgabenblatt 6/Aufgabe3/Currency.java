@@ -1,4 +1,3 @@
-package Aufgabe3;
 
 public abstract class Currency {
     public abstract String getName();

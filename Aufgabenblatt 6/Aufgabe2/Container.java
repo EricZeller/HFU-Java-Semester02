@@ -1,4 +1,3 @@
-package Aufgabe2;
 
 public interface Container<E> {
     int size();
