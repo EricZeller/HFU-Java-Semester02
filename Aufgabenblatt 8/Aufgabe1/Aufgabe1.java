@@ -26,14 +26,20 @@ public class Aufgabe1 {
 
         // Gib das Ergebnis aus
         if (isSorted) {
-            System.out.println("array is sorted");
+            System.out.println(sortable.getClass() + ": array is sorted");
         } else {
-            System.out.println("array is not sorted");
+            System.out.println(sortable.getClass() + ": array is not sorted");
         }
     }
 
     public static void main(String[] args) {
-        Sorter<Integer> sorter = new BubbleSorter<>();
-        testSorter(sorter);
+        Sorter<Integer> bubbleSorter = new BubbleSorter<>();
+        testSorter(bubbleSorter);
+
+        Sorter<Integer> fastbubbleSorter = new FastBubbleSorter<>();
+        testSorter(fastbubbleSorter);
+
+        Sorter<Integer> javaSorter = new JavaSorter<>();
+        testSorter(javaSorter);
     }
 }
