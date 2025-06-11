@@ -3,16 +3,16 @@ import java.util.Random;
 public class Aufgabe1 {
 
     private static void testSorter(Sorter<Integer> sortable) {
-        // Erzeuge ein Array mit 10.000 Elementen
-        Integer[] array = new Integer[10000];
+        // Erzeugt ein Array mit 10.000 Elementen
+        Integer[] array = new Integer[10_000];
         Random random = new Random();
 
-        // Fülle das Array mit Zufallszahlen
+        // Füllt das Array mit Pseudo Zufallszahlen
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(); // Erzeugt eine zufällige Ganzzahl
         }
 
-        // Sortiere das Array mit dem übergebenen Sorter
+        // Sortiert das Array mit dem übergebenen Sorter
         sortable.sort(array);
 
         // Überprüfe, ob das Array sortiert ist

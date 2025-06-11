@@ -10,7 +10,7 @@ public class Aufgabe2 {
         Integer[] sortedArray = sortedArray(size);
         long timeSorted = measureSortingTime(sorter, sortedArray);
         // c
-        Integer[] equalArray = equalArray(size, 4_211);
+        Integer[] equalArray = equalArray(size, 4711);
         long timeEqual = measureSortingTime(sorter, equalArray);
         // ausgabe
         System.out.println(sorter.getClass() + " Runtimes: Random Values=" + timeRandom + "ms, Sorted Values=" + timeSorted
