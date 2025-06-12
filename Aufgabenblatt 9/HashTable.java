@@ -1,8 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class HashTable<T> implements Container<T> {
-    private LinkedList<T>[] table;
+public class HashTable<E> implements Container<E> {
+    private LinkedList<E>[] table;
     private int size = 0;
 
     public HashTable() {
@@ -10,13 +10,13 @@ public class HashTable<T> implements Container<T> {
     }
 
     private HashTable(int buckets) {
-        table = (LinkedList<T>[]) new LinkedList[buckets];
+        table = (LinkedList<E>[]) new LinkedList[buckets];
         for (int i = 0; i < table.length; i++) {
             table[i] = new LinkedList<>();
         }
     }
 
-    private LinkedList<T> getBucket(T value) {
+    private LinkedList<E> getBucket(E value) {
         int index = value.hashCode() % table.length;
         if (index < 0) {
             index += table.length;
@@ -24,12 +24,12 @@ public class HashTable<T> implements Container<T> {
         return table[index];
     }
 
-    public boolean add(T value) {
+    public boolean add(E value) {
         size++;
         return getBucket(value).add(value);
     }
 
-    public boolean remove(T value) {
+    public boolean remove(E value) {
         boolean removed = getBucket(value).remove(value);
         if (removed) {
             size--;
@@ -37,7 +37,7 @@ public class HashTable<T> implements Container<T> {
         return removed;
     }
 
-    public boolean contains(T value) {
+    public boolean contains(E value) {
         return getBucket(value).contains(value);
     }
 
@@ -46,13 +46,13 @@ public class HashTable<T> implements Container<T> {
     }
 
     // Für Iterable 
-    public Iterator<T> iterator() {
+    public Iterator<E> iterator() {
         return new HashTableIterator();
     }
 
-    private class HashTableIterator implements Iterator<T> {
+    private class HashTableIterator implements Iterator<E> {
         private int currentBucket = 0;
-        private Iterator<T> currentIterator = table[0].iterator();
+        private Iterator<E> currentIterator = table[0].iterator();
         // Springe zu nächsten Bucket falls aktueller Bucket leer ist
         public boolean hasNext() {
             while (currentBucket < table.length && !currentIterator.hasNext()) {
@@ -64,7 +64,7 @@ public class HashTable<T> implements Container<T> {
             return currentBucket < table.length;
         }
 
-        public T next() {
+        public E next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
