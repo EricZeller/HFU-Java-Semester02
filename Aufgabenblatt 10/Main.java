@@ -49,9 +49,9 @@ public class Main {
         // aufgabe 3
         System.out.println("Aufgabe 3");
         System.out.println("Baum 1 min: " + tree1.min() + ", max: " + tree1.max());
-        System.out.println("Baum 1 min: " + tree2.min() + ", max: " + tree2.max());
-        System.out.println("Baum 1 min: " + emptyTree.min() + ", max: " + emptyTree.max());
-        System.out.println("Baum 1 min: " + listTree.min() + ", max: " + listTree.max());
+        System.out.println("Baum 2 min: " + tree2.min() + ", max: " + tree2.max());
+        System.out.println("Leerer Baum min: " + emptyTree.min() + ", max: " + emptyTree.max());
+        System.out.println("Listen-Baum min: " + listTree.min() + ", max: " + listTree.max());
 
     }
 }
